@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'aws/bootstrap/cli'
+
+Aws::Bootstrap::CLI.start(ARGV)

@@ -1,15 +1,13 @@
 module Aws
   module Bootstrap
     class RDS
-      def initialize(profile = nil,region = 'us-east-1')
+      def initialize(profile, region = 'us-east-1')
         @profile = profile
         @region = region
       end
 
-      def create_rds_instance
+      def create_rds_instance_with_profile
         client = Aws::RDS::Client.new(
-          access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-          secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
           region: @region,
           profile: @profile
         )
