@@ -6,7 +6,7 @@ require 'aws/bootstrap/version'
 Gem::Specification.new do |spec|
   spec.name          = "aws-bootstrap"
   spec.version       = Aws::Bootstrap::VERSION
-  spec.authors       = ["Takayuki WATANABE"]
+  spec.authors       = ["Takayuki Watanabe"]
   spec.email         = ["takanabe@gmail.com"]
 
   spec.summary       = %q{Write a short summary, because Rubygems requires one.}
