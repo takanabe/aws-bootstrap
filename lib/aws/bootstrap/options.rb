@@ -9,13 +9,7 @@ module Aws
           sub_cmd_parsers = create_sub_cmd_parsers(opts)
           opts[:command] = argv.shift
           sub_cmd_parsers[opts[:command]].parse! argv
-          if opts.fetch(:profile, nil)
-            c = Aws::Bootstrap::RDS.new(opts)
-            c.create_rds_instance_with_profile
-          else
-            puts "Please define profile with --profile option"
-            exit 1
-          end
+          opts
         rescue => e
           $stderr.puts e
           exit 1

@@ -2,4 +2,4 @@
 
 require 'aws/bootstrap/cli'
 
-Aws::Bootstrap::CLI.run(ARGV)
+Aws::Bootstrap::CLI.start(ARGV)
