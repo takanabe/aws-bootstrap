@@ -1,3 +1,4 @@
+require 'active_support'
 require 'aws/bootstrap'
 require 'aws/bootstrap/options'
 require 'optparse'
@@ -6,7 +7,7 @@ module Aws
   module Bootstrap
     class CLI
       def self.start(argv)
-        opts = Aws::Bootstrap::Options.parse(argv)
+        opts = Aws::Bootstrap::Options.parse!(argv)
         execute(opts)
       end
 
@@ -16,7 +17,8 @@ module Aws
           resp = c.create_rds_instance_with_profile
           puts "Your AWS account is creating #{resp.db_instance.db_instance_identifier} now!!"
         else
-          puts "Please define profile with --profile option"
+          puts "Please define profile use --profile option or " \
+               "AWS_ACCESS_KEY & AWS_SECRET_ACCESS_KEY"
           exit 1
         end
       end
